@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Aspergit';
+    src: local('Aspergit Light'), local('AspergitLight'), url('aspergitlight.woff2') format('woff2'), url('aspergitlight.woff') format('woff'), url('aspergitlight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Aspergit';
+    src: local('Aspergit Light Italic'), local('AspergitLightItalic'), url('aspergitlightitalic.woff2') format('woff2'), url('aspergitlightitalic.woff') format('woff'), url('aspergitlightitalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Aspergit';
+    src: local('Aspergit'), url('aspergit.woff2') format('woff2'), url('aspergit.woff') format('woff'), url('aspergit.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Aspergit';
+    src: local('Aspergit Italic'), local('AspergitItalic'), url('aspergititalic.woff2') format('woff2'), url('aspergititalic.woff') format('woff'), url('aspergititalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Aspergit';
+    src: local('Aspergit Bold'), local('AspergitBold'), url('aspergitbold.woff2') format('woff2'), url('aspergitbold.woff') format('woff'), url('aspergitbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Aspergit';
+    src: local('Aspergit Bold Italic'), local('AspergitBoldItalic'), url('aspergitbolditalic.woff2') format('woff2'), url('aspergitbolditalic.woff') format('woff'), url('aspergitbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}

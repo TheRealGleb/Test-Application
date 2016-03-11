@@ -1,0 +1,22 @@
+@charset "utf-8";
+* {
+outline:none !important;
+}
+
+body {
+	background:url('../img/background-website.jpg');
+}
+main {
+	margin-top: 80px;
+}
+@font-face {
+	font-family: 'Aspergit';
+	src: url(../fonts/aspergit/aspergitbold.woff) format('woff');
+}
+@font-face {
+	font-family: 'kobzarks';
+	src: url(../fonts/kobzarks/kobzarks.woff) format('woff');
+}
+ul{
+	margin-top:0 !important;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Тестовое задание</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="keywords" content="Тестовое, задание, таблица, учёт, сотрудников" />
+<meta name="description" content="Таблица учёта работы сотрудников" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      <a class="navbar-brand" href="#">База работников</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" id="searchInput">
+        </div>
+        <button type="button" class="btn btn-primary" id="searchbutton">Найти</button>
+        <button type="button" class="btn btn-default" id="reset">Сбросить</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Ссылка</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Действие</a></li>
+            <li><a href="#">Другое действие</a></li>
+            <li><a href="#">Что-то еще</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Отдельная ссылка</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</header>
+<main>
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+  <!-- Default panel contents -->
+        <div class="panel-heading">Список сотрудников</div>
+
+         <!-- Table -->
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">ФИО</th>
+                <th class="text-center">Пол</th>
+                <th class="text-center">Дата добавления</th>
+                <th class="text-center">Контакты</th>
+                <th class="text-center">Редактирование</th>
+              </tr>
+            </thead>
+            <tbody id="workerlist">
+                
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <ul class="pagination" id="allusers">
+        
+       
+      </ul>
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Добавить</button>
+<!-- Модальное окно для ввода данных-->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Введите данные сотрудника</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" role="form" id="myform">
+  <div class="form-group">
+    <label for="inputFIO1" class="col-sm-2 control-label">ФИО</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputFIO1" placeholder="ФИО" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail2" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="inputEmail2" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputTel3" class="col-sm-2 control-label">Tel.</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputTel3" placeholder="Phone" required>
+    </div>
+  </div>
+  <div class="form-group">
+  <label class="col-sm-2 control-label">Пол</label>
+    <div class="col-sm-2" >
+      <div class="radio">
+  <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="Мужской">
+          Мужской
+        </label>
+</div>
+<div class="radio">
+  <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="Женский">
+          Женский
+        </label>
+</div>
+    </div>
+    </div>
+  
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="submit" class="btn btn-primary" id="adduser">Добавить</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Конец модального окна-->
+
+ <!-- Модальное окно для редактирования-->
+<div class="modal fade" id="rewriteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabelrewrite">Введите данные сотрудника</h4>
+      </div>
+      <div class="modal-body">
+          <form class="form-horizontal" role="form" id="myformrewrite">
+  <div class="form-group">
+    <label for="inputFIO1rewrite" class="col-sm-2 control-label">ФИО</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputFIO1rewrite" placeholder="ФИО" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEmail2rewrite" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="inputEmail2rewrite" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputTel3rewrite" class="col-sm-2 control-label">Tel.</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputTel3rewrite" placeholder="Phone" required>
+    </div>
+  </div>
+  <div class="form-group">
+  <label class="col-sm-2 control-label">Пол</label>
+    <div class="col-sm-2" >
+      <div class="radio">
+  <label>
+          <input type="radio" name="optionsRadiosrewrite" id="optionsRadios1rewrite" value="Мужской">
+          Мужской
+        </label>
+</div>
+<div class="radio">
+  <label>
+          <input type="radio" name="optionsRadiosrewrite" id="optionsRadios2rewrite" value="Женский">
+          Женский
+        </label>
+</div>
+    </div>
+    </div>
+  
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary" id="rewrite">Редактировать</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- КОнец модального окна-->
+ <!-- Modal -->
+<div class="modal fade" id="tabelTime" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="workersname"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <table class="table table-bordered">
+                <thead>
+                  <tr class="info">
+                    <th>День</th>
+                    <th>Начало рабочего дня</th>
+                    <th>Конец рабочего дня</th>
+                  </tr>
+                </thead>
+                <tbody id="daysList">
+                  
+                </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-2">
+            <ul class="pagination" id="tabelLength">
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-sm-2 col-sm-offset-3">
+             <button type="button" class="btn btn-success" id="beginning">Начать день</button>
+          </div>
+          <div class="col-sm-2 col-sm-offset-1">
+             <button type="button" class="btn btn-danger" id="ending">Закончить день</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Конец модали-->
+    </div>
+  </div>
+</div>
+</main>
+
+<script type="text/javascript" src="js/logic.js"></script>
+</body>
+</html>
